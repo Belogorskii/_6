@@ -1,5 +1,9 @@
-﻿//Ввести с клавиатуры строку.
-//Сформировать перевернутую строку
+/*Ввести с клавиатуры предложение. 
+Предложение представляет собой слова, 
+разделенные пробелом. Знаки препинания 
+не используются. Найти самое длинное 
+слово в строке.*/
+
 
 using System;
 using System.Collections.Generic;
@@ -14,13 +18,18 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             string str = Console.ReadLine();
-            string str2 = "";
-            foreach (char c in str)
+            string[] strArray = str.Split();
+            string max = strArray[0];
+            foreach (string s in strArray)
             {
-                str2 = c + str2;
+                if (s.Length > max.Length)
+                {
+                    max = s;
+                }
             }
-            Console.WriteLine(str2);
+            Console.WriteLine(max);
             Console.ReadKey();
         }
     }
 }
+
